@@ -1,0 +1,61 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "right start drive 1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "score preload i"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "preload to HP"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "hp to score 1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "score K"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "score k to HP"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "hp to score 2"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "score L"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": true
+}
