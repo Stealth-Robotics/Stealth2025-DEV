@@ -220,9 +220,8 @@ public class RobotContainer {
 		autoRoutine.active().onTrue(
 				PRE_F.resetOdometry().andThen(
 						PRE_F.cmd(),
-
 						SCORE_F.cmd()
-										.andThen(new WaitUntilCommand(subsystemsAtSetpoints)),
+						.andThen(new WaitUntilCommand(subsystemsAtSetpoints)),
 						dunk,
 						eject));
 
