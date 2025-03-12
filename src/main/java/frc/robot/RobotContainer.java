@@ -39,7 +39,7 @@ import frc.robot.subsystems.CommandSwerveDrivetrain.ReefSide;
 public class RobotContainer {
 
 	CommandXboxController driverController = new CommandXboxController(0);
-	CommandXboxController operatorController = new CommandXboxController(1);
+	// CommandXboxController operatorController = new CommandXboxController(1);
 
 	@NotLogged
 	private final double MAX_VELO = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond),
@@ -129,8 +129,8 @@ public class RobotContainer {
 	public void configureBindings() {
 		// this gets run in teleopInit, so it should stop subsystems from moving on
 		// enable
-		operatorController.povDown().onTrue(Commands.runOnce(() -> algaeTarget = AlgaeTarget.PROCESSOR));
-		operatorController.povUp().onTrue(Commands.runOnce(() -> algaeTarget = AlgaeTarget.NET));
+		// operatorController.povDown().onTrue(Commands.runOnce(() -> algaeTarget = AlgaeTarget.PROCESSOR));
+		// operatorController.povUp().onTrue(Commands.runOnce(() -> algaeTarget = AlgaeTarget.NET));
 
 		driverController.povDown().onTrue(Commands.runOnce(() -> dt.seedFieldCentric()));
 
