@@ -6,6 +6,8 @@ import java.util.function.Supplier;
 
 import com.ctre.phoenix6.SignalLogger;
 import com.ctre.phoenix6.Utils;
+import com.ctre.phoenix6.hardware.Pigeon2;
+import com.ctre.phoenix6.mechanisms.swerve.LegacySwerveRequest.FieldCentricFacingAngle;
 import com.ctre.phoenix6.swerve.SwerveDrivetrainConstants;
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveModuleConstants;
@@ -32,7 +34,7 @@ import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
-
+import frc.robot.LimelightHelpers;
 import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 
 /**
@@ -73,6 +75,10 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
 
     private Pose2d testTarget = getPose().transformBy(new Transform2d(getPose(), aprilTagTestPose))
             .transformBy(leftTagOffset);
+    Pose2d getRobotPose_TargetSpace = frc.robot.LimelightHelpers.getBotPose2d_wpiBlue(null);
+    private Pose2d toAprilTag = (Pose2d)getRobotPose_TargetSpace;
+    private Rotation2d robotRotation = new Rotation2d(getPigeon2().getYaw().getValueAsDouble());
+    private Transform2d followTag = new Transform2d(toAprilTag.getX(),toAprilTag.getY(), robotRotation);
 
     private Transform2d robotToTag = new Transform2d();
 
